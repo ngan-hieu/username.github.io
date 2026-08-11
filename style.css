@@ -18,35 +18,25 @@ body {
     position: relative;
 }
 
-/* ========================================== */
-/* THÊM CSS CHO VIDEO NỀN CHUYỂN ĐỘNG         */
-/* ========================================== */
-
-/* 1. Video phủ kín màn hình ở phía sau */
 #bg-video {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Giữ tỉ lệ video tràn viền không bị co méo */
-    z-index: -2;      /* Đặt phía dưới cùng */
+    object-fit: cover;
+    z-index: -2;
 }
 
-/* 2. Lớp phủ làm tối video để chữ dễ nhìn hơn */
 .video-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(10, 10, 18, 0.65); /* Độ tối 65% */
+    background: rgba(10, 10, 18, 0.65);
     z-index: -1;
 }
-
-/* ========================================== */
-/* NỘI DUNG CHÍNH (GIỮ NGUYÊN)                 */
-/* ========================================== */
 
 .bio-container {
     max-width: 700px;
@@ -55,16 +45,14 @@ body {
     z-index: 2;
 }
 
-/* Khung chứa Avatar và Tên (Nằm ngang) */
 .profile-header {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px; /* Khoảng cách giữa avatar và tên */
+    gap: 12px;
     margin-bottom: 15px;
 }
 
-/* Ảnh Avatar nhỏ gọn bo góc nhẹ */
 .avatar {
     width: 45px;
     height: 45px;
@@ -73,11 +61,33 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+/* HIỆU ỨNG CHỮ CẦU VỒNG CHUYỂN ĐỘNG CHO HIẾU */
 .title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #ffffff;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    background: linear-gradient(
+        45deg, 
+        #ff0000, 
+        #ff7300, 
+        #fffb00, 
+        #48ff00, 
+        #00ffd5, 
+        #002bff, 
+        #7a00ff, 
+        #ff00c8, 
+        #ff0000
+    );
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbowAnimation 5s ease infinite;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+@keyframes rainbowAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .subtitle {
@@ -137,5 +147,33 @@ body {
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-.discord { background-color: #5865f2; } /* Màu Cho Discord */
-.facebook { background-color: #1f2edb; } /* Màu Cho Facebook */
+.discord { background-color: #5865f2; }
+.facebook { background-color: #1f2edb; }
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+}
+
+.music-player button {
+    background: rgba(168, 85, 247, 0.4);
+    border: 1px solid rgba(168, 85, 247, 0.8);
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.music-player button:hover {
+    background: rgba(168, 85, 247, 0.8);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+}

@@ -51,5 +51,67 @@
 
     </div>
 
+    <div class="music-player">
+        <audio id="myAudio" autoplay>
+            <source id="audioSource" src="" type="audio/mpeg">
+        </audio>
+        
+        <button id="musicBtn" onclick="toggleMusic()">
+            <i class="fa-solid fa-music"></i> <span id="musicText">Tắt nhạc</span>
+        </button>
+    </div>
+
+    <script>
+        var playlist = [
+            "https://rr6---sn-42u-q5q6.googlevideo.com/videoplayback?expire=1786497297&ei=sXR7aoHDGZiV1d8Po6fr6Q4&ip=2a0f%3A85c1%3Acf1%3A2a9c%3A5915%3Abc83%3A86b4%3A93c3&id=o-AODiMQrcJRGMuqwiyVkM7LtmXEBb93KQ1EjWApRB_cOp&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&rms=au%2Cau&bui=AZFlqhOJ8Oc5UGvLotgUCJulC2_2FTrw3IgBK3X2EBRDqq38n7CWpm4XToCF9DBzTSBgRu1ylK87bhtM&spc=KBGBct_C5iSGHs0K8oi0Fou_p28tSC44Ym1fge1mvR-bs6mAm_BM&vprv=1&svpuc=1&mime=video%2Fmp4&rqh=1&cnr=14&ratebypass=yes&dur=202.686&lmt=1697047050093167&fexp=51565116,52089683&c=ANDROID_VR&txp=5538434&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AE0s2JYwRQIgFRa8lkWGGf96_vJlynyX1KhZIs5hmcvWnRBpS1V2ad0CIQDykOdk0ISTlm1QXjlB28GSdE_lQTiI4wTYfcoXzc7Hzw%3D%3D&redirect_counter=1&rm=sn-ogue7e7z&rrc=104&req_id=ea9323abda4ea3ee&cms_redirect=yes&cmsv=e&cps=0&ipbypass=yes&met=1786475708,&mh=NQ&mip=2405:4802:ec28:6110:9de4:7747:8480:8b6b&mm=31&mn=sn-42u-q5q6&ms=au&mt=1786474873&mv=m&mvi=6&pl=46&lsparams=cps,ipbypass,met,mh,mip,mm,mn,ms,mv,mvi,pl,rms&lsig=APaTxxMwRgIhALnbl1_Q4v2adkPgGZWJ8VjDPCSYHy0zYcZ2vHdPTAqYAiEA8CSdbU37NatnKKaI5ROkysUWQ0QASorZfeFcU789hnQ%3D",
+            "", //link bài 2 vào đây
+            ""  //link bài 3 vào đây
+        ];
+
+        var currentTrack = 0;
+        var audio = document.getElementById("myAudio");
+        var audioSource = document.getElementById("audioSource");
+        var text = document.getElementById("musicText");
+
+        // Hàm tải bài hát theo chỉ số (index)
+        function loadTrack(index) {
+            audioSource.src = playlist[index];
+            audio.load();
+        }
+        audio.onended = function() {
+            currentTrack = (currentTrack + 1) % playlist.length;
+            loadTrack(currentTrack);
+            audio.play();
+            text.innerText = "Tắt nhạc";
+        };
+
+        // Tự động phát khi mở trang
+        window.addEventListener('DOMContentLoaded', function() {
+            loadTrack(currentTrack);
+            var promise = audio.play();
+            if (promise !== undefined) {
+                promise.then(function() {
+                    text.innerText = "Tắt nhạc";
+                }).catch(function(error) {
+                    document.addEventListener('click', function() {
+                        audio.play();
+                        text.innerText = "Tắt nhạc";
+                    }, { once: true });
+                });
+            }
+        });
+
+        // Bật / Tắt nhạc
+        function toggleMusic() {
+            if (audio.paused) {
+                audio.play();
+                text.innerText = "Tắt nhạc";
+            } else {
+                audio.pause();
+                text.innerText = "Bật nhạc";
+            }
+        }
+    </script>
+
 </body>
 </html>
