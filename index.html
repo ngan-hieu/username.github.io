@@ -4,19 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ của tôi</title>
-    
-    <!-- Kết nối file CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
+    <!-- Menu điều hướng -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">MyWebsite</div>
+            <ul class="nav-links">
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Dịch vụ</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Nội dung chính -->
+    <main class="container">
         <h1>Chào mừng đến với trang web của tôi!</h1>
-        <p>Đây là nội dung trang chủ. Hãy bấm vào nút bên dưới để khám phá thêm:</p>
+        <p>Đây là nội dung trang chủ. Hãy bấm vào nút bên dưới để trải nghiệm thử nhé:</p>
+        
+        <button type="button" id="btnWelcome">Bắt đầu ngay</button>
+    </main>
 
-        <!-- Thêm thẻ button vào đây -->
-        <button type="button">Bắt đầu ngay</button>
-    </div>
+    <!-- Chân trang -->
+    <footer>
+        <p>&copy; 2026 Trang web của tôi. All rights reserved.</p>
+    </footer>
 
+    <!-- Thêm đoạn mã JavaScript trực tiếp -->
+    <script>
+        document.getElementById('btnWelcome').addEventListener('click', function() {
+            alert('Cảm ơn bạn đã ghé thăm trang web!');
+        });
+    </script>
 </body>
 </html>
