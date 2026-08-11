@@ -26,24 +26,40 @@ body {
     z-index: 2;
 }
 
-.title {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: #a855f7;
-    text-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+/* Khung chứa Avatar và Tên (Nằm ngang) */
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px; /* Khoảng cách giữa avatar và tên */
     margin-bottom: 15px;
+}
+
+/* Ảnh Avatar nhỏ gọn bo góc nhẹ */
+.avatar {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .subtitle {
     font-size: 1.1rem;
     color: #a855f7;
     max-width: 650px;
-    margin: 0 auto 40px auto;
+    margin: 0 auto 30px auto;
     line-height: 1.6;
     opacity: 0.9;
 }
 
-/* Hiển thị 3 thẻ nằm ngang cân đối */
 .social-grid {
     display: flex;
     justify-content: center;
@@ -56,7 +72,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
     padding: 20px 25px;
-    width: 130px;
+    width: 160px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -92,16 +108,4 @@ body {
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-/* Màu sắc chuẩn cho Discord, Facebook, YouTube */
 .discord { background-color: #5865f2; }
-@media (max-width: 480px) {
-    .card {
-        width: 100px;
-        padding: 15px 10px;
-    }
-    .icon-box {
-        width: 50px;
-        height: 50px;
-        font-size: 24px;
-    }
-}
