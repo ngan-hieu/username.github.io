@@ -3,42 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chủ của tôi</title>
+    <title>Sbkidi - Bio Link</title>
+    <!-- FontAwesome hỗ trợ icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Menu điều hướng -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">MyWebsite</div>
-            <ul class="nav-links">
-                <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Giới thiệu</a></li>
-                <li><a href="#">Dịch vụ</a></li>
-                <li><a href="#">Liên hệ</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Nội dung chính -->
-    <main class="container">
-        <h1>Chào mừng đến với trang web của tôi!</h1>
-        <p>Đây là nội dung trang chủ. Hãy bấm vào nút bên dưới để trải nghiệm thử nhé:</p>
+    <div class="bio-container">
         
-        <button type="button" id="btnWelcome">Bắt đầu ngay</button>
-    </main>
+        <!-- Phần tiêu đề và câu Bio -->
+        <h1 class="title">Sbkidi</h1>
+        <p class="subtitle">
+            Hãy học cách chấp nhận, vì mọi thứ rồi sẽ khác, chỉ là sớm hay muộn mà thôi
+        </p>
 
-    <!-- Chân trang -->
-    <footer>
-        <p>&copy; 2026 Trang web của tôi. All rights reserved.</p>
-    </footer>
+        <div class="social-grid">
+            
+            <!-- Discord -->
+            <a href="https://discord.gg/nFyaN95xN" target="_blank" class="card">
+                <div class="icon-box discord">
+                    <i class="fa-brands fa-discord"></i>
+                </div>
+                <span>Discord(Link Sever)</span>
+            </a>
 
-    <!-- Thêm đoạn mã JavaScript trực tiếp -->
-    <script>
-        document.getElementById('btnWelcome').addEventListener('click', function() {
-            alert('Cảm ơn bạn đã ghé thăm trang web!');
-        });
-    </script>
+            <!-- Facebook -->
+            <a href="https://facebook.com/your-profile" target="_blank" class="card">
+                <div class="icon-box facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                </div>
+                <span>Facebook</span>
+            </a>
+
+            <!-- YouTube -->
+            <a href="https://youtube.com/@your-channel" target="_blank" class="card">
+                <div class="icon-box youtube">
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+                <span>YouTube</span>
+            </a>
+
+        </div>
+
+    </div>
+
 </body>
 </html>
