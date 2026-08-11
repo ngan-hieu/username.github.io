@@ -1,10 +1,34 @@
+/* Kiểu dáng chung cho trang */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Kiểu dáng cho button của bạn */
 button {
     background-color: #28a745;
-    color: rgb(189, 32, 32);
+    color: #ffffff; /* Sửa màu chữ thành trắang để tương phản tốt hơn với nền xanh */
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
