@@ -94,9 +94,6 @@ body {
 
 /* Màu sắc chuẩn cho Discord, Facebook, YouTube */
 .discord { background-color: #5865f2; }
-.facebook { background-color: #1877f2; }
-.youtube { background-color: #ff0000; }
-
 @media (max-width: 480px) {
     .card {
         width: 100px;
