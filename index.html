@@ -10,6 +10,15 @@
 </head>
 <body>
 
+    <!-- VIDEO NỀN CHUYỂN ĐỘNG -->
+    <!-- Bạn nhớ để file video tên background.mp4 cùng thư mục với file index.html này nhé -->
+    <video autoplay loop muted playsinline id="bg-video">
+        <source src="background.mp4" type="video/mp4">
+    </video>
+
+    <!-- Lớp phủ làm mờ/tối nền để nổi bật các nút bấm -->
+    <div class="video-overlay"></div>
+
     <div class="bio-container">
     
         <div class="profile-header">
@@ -20,15 +29,18 @@
         <p class="subtitle">
             Thông Tin Tôi(My Me)
         </p>
-
+        
         <div class="social-grid">
-
+            
+            <!-- Discord -->
             <a href="https://discord.gg/nFyaN95xN" target="_blank" class="card">
                 <div class="icon-box discord">
                     <i class="fa-brands fa-discord"></i>
                 </div>
                 <span>Discord(Link Sever)</span>
             </a>
+
+            <!-- Facebook -->
             <a href="https://facebook.com/your-profile" target="_blank" class="card">
                 <div class="icon-box facebook">
                     <i class="fa-brands fa-facebook"></i>
